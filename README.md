@@ -20,14 +20,24 @@ The data for this example can be download from this [link](https://www.dropbox.c
 
 
 
-### Dependencies:
 
 
-## Use
-To run test simple run:
+### Requirement
+Required python libraries: Tensorflow (>=1.0) + Scipy + Numpy
+os, math, json, re, easydict, logging, enum are also needed
+
+
+## Quick Start (Testing)
+1. Clone this repository.
+2. Download the pretrained models from this [link](https://www.dropbox.com/s/q3wjtaxr76cdx3t/imagenet-vgg-verydeep-19.mat?dl=0)
+To run test, update the config.base_dir and config.vgg_model_path in ```config.py``` and run:
 ```
 demo_256_single_image.py
 ```
+## Training
+1. Change ```config.TRAIN.to_train``` to ```True```
+2. 
+
 
 ## License
 
@@ -38,6 +48,24 @@ demo_256_single_image.py
    the aforementioned papers in any resulting publication.
 
    The Software is provided "as is", without warranty of any kind.
+   
+## Citation
+If you use our code for research, please cite our paper:
+```
+@article{mechrez2018contextual,
+  title={The Contextual Loss for Image Transformation with Non-Aligned Data},
+  author={Mechrez, Roey and Talmi, Itamar and Zelnik-Manor, Lihi},
+  journal={arXiv preprint arXiv:1803.02077},
+  year={2018}
+}
+@article{mechrez2018Learning,
+  title={Learning to Maintain Natural Image Statistics, [arXiv](https://arxiv.org/abs/1803.04626)},
+  author={Mechrez, Roey and Talmi, Itamar and Shama, Firas and Zelnik-Manor, Lihi},
+  journal={arXiv preprint arXiv:1803.04626},
+  year={2018}
+}
+```
+
    
 ## Code References
 
