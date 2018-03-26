@@ -1,9 +1,9 @@
-# The Contextual Loss
+# The Contextual Loss [[project page]](http://cgm.technion.ac.il/Computer-Graphics-Multimedia/Software/Contextual/)
 
 ## The Contextual Loss for Image Transformation with Non-Aligned Data, [arXiv](https://arxiv.org/abs/1803.02077)
 ## Learning to Maintain Natural Image Statistics, [arXiv](https://arxiv.org/abs/1803.04626)
 
-[Roey Mechrez*](http://cgm.technion.ac.il/people/Roey/), Itamar Talmi*, Firas Shama, [Lihi Zelnik-Manor](http://lihi.eew.technion.ac.il/). The Technion
+[Roey Mechrez*](http://cgm.technion.ac.il/people/Roey/), Itamar Talmi*, Firas Shama, [Lihi Zelnik-Manor](http://lihi.eew.technion.ac.il/). [The Technion](http://cgm.technion.ac.il/)
 
 Copyright 2018 Itamar Talmi and Roey Mechrez Licensed for noncommercial research use only.
 
@@ -15,6 +15,7 @@ Copyright 2018 Itamar Talmi and Roey Mechrez Licensed for noncommercial research
 
 ## Installation
 These two papers have many applications, here we provide only one applications: animation from single image.
+
 An example pre-trained model can be download from this [link](https://www.dropbox.com/s/37nz4hy7ai4pqxc/single_im_D32_42_1.0_DC42_1.0.zip?dl=0)
 
 The data for this example can be download from this [link](https://www.dropbox.com/s/ggb6v6rv1a0212y/single.zip?dl=0)
