@@ -3,9 +3,9 @@
 ## The Contextual Loss for Image Transformation with Non-Aligned Data, [arXiv](https://arxiv.org/abs/1803.02077)
 ## Learning to Maintain Natural Image Statistics, [arXiv](https://arxiv.org/abs/1803.04626)
 
-[Roey Mechrez*](http://cgm.technion.ac.il/people/Roey/), Itamar Talmi*, Firas Shama, [Lihi Zelnik-Manor](http://lihi.eew.technion.ac.il/). arXiv
+[Roey Mechrez*](http://cgm.technion.ac.il/people/Roey/), Itamar Talmi*, Firas Shama, [Lihi Zelnik-Manor](http://lihi.eew.technion.ac.il/). The Technion
 
-Copyright 2006-2017 Itamar Talmi and Roey Mechrez Licensed for noncommercial research use only.
+Copyright 2018 Itamar Talmi and Roey Mechrez Licensed for noncommercial research use only.
 
 <div align='center'>
   <img src='teaser.png' height="500px">
@@ -18,10 +18,6 @@ These two papers have many applications, here we provide only one applications: 
 An example pre-trained model can be download from this [link](https://www.dropbox.com/s/37nz4hy7ai4pqxc/single_im_D32_42_1.0_DC42_1.0.zip?dl=0)
 The data for this example can be download from this [link](https://www.dropbox.com/s/ggb6v6rv1a0212y/single.zip?dl=0)
 
-
-
-
-
 ### Requirement
 Required python libraries: Tensorflow (>=1.0) + Scipy + Numpy
 os, math, json, re, easydict, logging, enum are also needed
@@ -29,11 +25,14 @@ os, math, json, re, easydict, logging, enum are also needed
 
 ## Quick Start (Testing)
 1. Clone this repository.
-2. Download the pretrained models from this [link](https://www.dropbox.com/s/q3wjtaxr76cdx3t/imagenet-vgg-verydeep-19.mat?dl=0)
-To run test, update the config.base_dir and config.vgg_model_path in ```config.py``` and run: ``` demo_256_single_image.py```
+2. Download the pretrained model from this [link](https://www.dropbox.com/s/q3wjtaxr76cdx3t/imagenet-vgg-verydeep-19.mat?dl=0)
+3. Extract the zip file under ```result``` folder. The models should be in ```based_dir/result/single_im_D32_42_1.0_DC42_1.0/```
+3. Update the ```config.base_dir``` and ```config.vgg_model_path``` in ```config.py``` and run: ``` demo_256_single_image.py```
+
 ## Training
 1. Change ```config.TRAIN.to_train``` to ```True```
-2. run ``` demo_256_single_image.py ```
+2. Arrange the paths to the data, should have ```train``` and ```test``` folders
+2. run ``` demo_256_single_image.py ``` for 10 epochs. 
 
 
 ## License
