@@ -2,8 +2,8 @@
 
 This is a Tensorflow implementation of the Contextual loss function as reported in the following papers:
 
-## The Contextual Loss for Image Transformation with Non-Aligned Data, [arXiv](https://arxiv.org/abs/1803.02077)
-## Learning to Maintain Natural Image Statistics, [arXiv](https://arxiv.org/abs/1803.04626)
+### The Contextual Loss for Image Transformation with Non-Aligned Data, [arXiv](https://arxiv.org/abs/1803.02077)
+### Learning to Maintain Natural Image Statistics, [arXiv](https://arxiv.org/abs/1803.04626)
 
 [Roey Mechrez*](http://cgm.technion.ac.il/people/Roey/), Itamar Talmi*, Firas Shama, [Lihi Zelnik-Manor](http://lihi.eew.technion.ac.il/). [The Technion](http://cgm.technion.ac.il/)
 
