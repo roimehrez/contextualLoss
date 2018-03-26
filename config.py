@@ -15,6 +15,7 @@ config = edict()
 #               update the right paths
 config.base_dir = 'C:/DATA/person2person/single/'
 config.single_image_B_file_name = 'C:/DATA/person2person/single/4.jpg'
+config.vgg_model_path = 'C:/DATA/VGG_Model/imagenet-vgg-verydeep-19.mat'
 #---------------------------------------------
 
 
