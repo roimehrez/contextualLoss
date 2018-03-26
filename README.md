@@ -30,13 +30,10 @@ os, math, json, re, easydict, logging, enum are also needed
 ## Quick Start (Testing)
 1. Clone this repository.
 2. Download the pretrained models from this [link](https://www.dropbox.com/s/q3wjtaxr76cdx3t/imagenet-vgg-verydeep-19.mat?dl=0)
-To run test, update the config.base_dir and config.vgg_model_path in ```config.py``` and run:
-```
-demo_256_single_image.py
-```
+To run test, update the config.base_dir and config.vgg_model_path in ```config.py``` and run: ``` demo_256_single_image.py```
 ## Training
 1. Change ```config.TRAIN.to_train``` to ```True```
-2. 
+2. run ``` demo_256_single_image.py ```
 
 
 ## License
