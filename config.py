@@ -40,7 +40,7 @@ config.TRAIN.every_nth_frame = 1 #train using all frames
 
 config.VAL = edict()
 config.VAL.A_data_dir = 'test'
-config.VAL.every_nth_frame = 10
+config.VAL.every_nth_frame = 1
 
 config.TEST = edict()
 config.TEST.is_test = not config.TRAIN.is_train
