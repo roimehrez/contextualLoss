@@ -14,7 +14,7 @@ config = edict()
 #---------------------------------------------
 #               update the right paths
 config.base_dir = 'C:/DATA/person2person/single/'
-config.single_image_B_file_name = 'C:/DATA/person2person/single/4.jpg'
+config.single_image_B_file_name = 'trump_cartoon.jpg'
 config.vgg_model_path = 'C:/DATA/VGG_Model/imagenet-vgg-verydeep-19.mat'
 #---------------------------------------------
 
@@ -27,7 +27,7 @@ config.W.CX_content = 1.0
 
 # train parameters
 config.TRAIN = edict()
-config.TRAIN.is_train = False #change to True of you want to train
+config.TRAIN.is_train = True #change to True of you want to train
 config.TRAIN.sp = 256
 config.TRAIN.aspect_ratio = 1  # 1
 config.TRAIN.resize = [config.TRAIN.sp * config.TRAIN.aspect_ratio, config.TRAIN.sp]
@@ -59,7 +59,6 @@ config.CX.Dist = Distance.DotProduct
 config.CX.nn_stretch_sigma = 0.5#0.1
 config.CX.patch_size = 5
 config.CX.patch_stride = 2
-config.CX.log_dis = True
 
 
 def last_two_nums(str):
@@ -74,11 +73,11 @@ def last_two_nums(str):
 
 config.expirament_postfix = 'single_im'
 if config.W.CX > 0:
-    config.expirament_postfix += "_D"
+    config.expirament_postfix += "_CXt" #CX_target
     config.expirament_postfix += '_'.join([last_two_nums(layer) for layer in sorted(config.CX.feat_layers.keys())])
     config.expirament_postfix += '_{}'.format(config.W.CX)
 if config.W.CX_content:
-    config.expirament_postfix += "_DC"
+    config.expirament_postfix += "_CXs" #CX_source
     config.expirament_postfix += '_'.join([last_two_nums(layer) for layer in sorted(config.CX.feat_content_layers.keys())])
     config.expirament_postfix += '_{}'.format(config.W.CX_content)
 

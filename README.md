@@ -23,8 +23,7 @@ An example pre-trained model can be download from this [link](https://www.dropbo
 The data for this example can be download from this [link](https://www.dropbox.com/s/ggb6v6rv1a0212y/single.zip?dl=0)
 
 ### Requirement
-Required python libraries: Tensorflow (>=1.0) + Scipy + Numpy
-os, math, json, re, easydict, logging, enum are also needed
+Required python libraries: Tensorflow (>=1.0) + Scipy + Numpy + easydict
 
 Tested in Windows + Intel i7 CPU + Nvidia Titan Xp (and 1080ti) with Cuda (>=8.0) and CuDNN (>=5.0). CPU mode should also work with minor changes.
 
@@ -33,12 +32,12 @@ Tested in Windows + Intel i7 CPU + Nvidia Titan Xp (and 1080ti) with Cuda (>=8.0
 1. Clone this repository.
 2. Download the pretrained model from this [link](https://www.dropbox.com/s/q3wjtaxr76cdx3t/imagenet-vgg-verydeep-19.mat?dl=0)
 3. Extract the zip file under ```result``` folder. The models should be in ```based_dir/result/single_im_D32_42_1.0_DC42_1.0/```
-3. Update the ```config.base_dir``` and ```config.vgg_model_path``` in ```config.py``` and run: ``` demo_256_single_image.py```
+3. Update the ```config.base_dir``` and ```config.vgg_model_path``` in ```config.py``` and run: ``` single_image_animation.py```
 
 ### Training
 1. Change ```config.TRAIN.to_train``` to ```True```
 2. Arrange the paths to the data, should have ```train``` and ```test``` folders
-2. run ``` demo_256_single_image.py ``` for 10 epochs. 
+2. run ``` single_image_animation.py ``` for 10 epochs. 
 
 
 ## License

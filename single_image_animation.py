@@ -1,18 +1,14 @@
 # ---------------------------------------------------
 #   code credits: https://github.com/CQFIO/PhotographicImageSynthesis
 # ---------------------------------------------------
-
-
 from __future__ import division
-
-from FetchManager import *
-from config import *
+import time
+import utils.helper as helper
 from CX_helper import *
 from model import *
-
+from utils.FetchManager import *
 
 sess = tf.Session()
-sp = config.TRAIN.sp
 
 # ---------------------------------------------------
 #                      graph
@@ -23,9 +19,9 @@ with tf.variable_scope(tf.get_variable_scope()):
     input_A_test = tf.placeholder(tf.float32, [None, None, None, 3])
     input_image_A, real_image_B = helper.random_crop_together(input_A, input_B, [2, config.TRAIN.resize[0], config.TRAIN.resize[1], 3])#
     with tf.variable_scope("g") as scope:
-        generator = recursive_generator(input_image_A, sp)
+        generator = recursive_generator(input_image_A, config.TRAIN.sp)
         scope.reuse_variables()
-        generator_test = recursive_generator(input_A_test, sp)
+        generator_test = recursive_generator(input_A_test, config.TRAIN.sp)
     weight = tf.placeholder(tf.float32)
     vgg_real = build_vgg19(real_image_B)
     vgg_fake = build_vgg19(generator, reuse=True)

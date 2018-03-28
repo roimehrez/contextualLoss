@@ -1,5 +1,8 @@
+# ---------------------------------------------------
+#   code credits: https://github.com/CQFIO/PhotographicImageSynthesis
+# ---------------------------------------------------
+
 import tensorflow.contrib.slim as slim
-import numpy as np
 from vgg_model import *
 from config import *
 
@@ -30,13 +33,3 @@ def recursive_generator(input_image, width):
     return net
 
 
-def compute_error(real, fake):
-    return tf.reduce_mean(tf.abs(fake - real))
-
-
-def compute_gram(feats):
-    N, H, W, C = map(lambda i: i.value, feats.get_shape())
-    size = H * W * C
-    feats = tf.reshape(feats, (N, H * W, C))
-    feats_T = tf.transpose(feats, perm=[0, 2, 1])
-    return tf.matmul(feats_T, feats) / size
