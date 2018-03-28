@@ -17,7 +17,7 @@ with tf.variable_scope(tf.get_variable_scope()):
     input_A = tf.placeholder(tf.float32, [None, None, None, 3])
     input_B = tf.placeholder(tf.float32, [None, None, None, 3])
     input_A_test = tf.placeholder(tf.float32, [None, None, None, 3])
-    input_image_A, real_image_B = helper.random_crop_together(input_A, input_B, [2, config.TRAIN.resize[0], config.TRAIN.resize[1], 3])#
+    input_image_A, real_image_B = helper.random_crop_together(input_A, input_B, [2, config.TRAIN.resize[0], config.TRAIN.resize[1], 3])
     with tf.variable_scope("g") as scope:
         generator = recursive_generator(input_image_A, config.TRAIN.sp)
         scope.reuse_variables()
@@ -102,19 +102,18 @@ if config.TRAIN.is_train:
                 continue
             A_image = helper.read_image(A_file_name)  # training image A
 
-
-            # may try lr:min(1e-6*np.power(1.1,epoch-1),1e-4 if epoch>100 else 1e-3) in case lr:1e-4 is not good
             feed_dict = {input_A: A_image, input_B: B_image, lr: 1e-4}
+
             #session run
             eval = fetcher.fetch(feed_dict, [CX_style_loss, CX_content_loss])
-            g_loss[ind] = eval[G_loss]
 
+            g_loss[ind] = eval[G_loss]
             log = "epoch:%d | cnt:%d | time:%.2f | loss:%.2f || dis_style:%.2f  | dis_content:%.2f " % \
                   (epoch, cnt, time.time() - st, np.mean(g_loss[np.where(g_loss)]), eval[CX_style_loss], eval[CX_content_loss])
             print(log)
          ##------------ end batch loop -------------------
 
-        # save the model
+        # -------------- save the model ------------------
         # we use loop with try and catch to verify that the save was done. when saving on Dropbox it sometimes cause an error.
         for i in range(5):
             try:
@@ -148,7 +147,7 @@ if config.TEST.is_test:
     time_list = np.zeros(len(test_file_list), dtype=float)
     for ind in range(len(test_file_list)):
         A_file_name_val = config.base_dir + config.TEST.A_data_dir + '/' + test_file_list[ind]
-        if not os.path.isfile(A_file_name_val):  # test label
+        if not os.path.isfile(A_file_name_val):
             continue
         A_image_val = helper.read_image(A_file_name_val, fliplr=False)  # training image A
         st = time.time()

@@ -1,6 +1,7 @@
 from CX import CSFlow
 import tensorflow as tf
 
+
 def random_sampling(tensor_NHWC, n, indices=None):
     N, H, W, C = tf.convert_to_tensor(tensor_NHWC).shape.as_list()
     S = H * W
@@ -13,7 +14,7 @@ def random_sampling(tensor_NHWC, n, indices=None):
     return res, indices
 
 
-def random_pooling(feats, patch_size=1, stride=1, output_1d_size=100):
+def random_pooling(feats, output_1d_size=100):
     is_input_tensor = type(feats) is tf.Tensor
 
     if is_input_tensor:
@@ -34,18 +35,20 @@ def random_pooling(feats, patch_size=1, stride=1, output_1d_size=100):
         return res[0]
     return res
 
-def crop_quarters(feature_tensor_target):
-    N, fH, fW, fC = feature_tensor_target.shape.as_list()
-    list = []
-    quarter_size = [N, round(fH / 2), round(fW / 2), fC]
-    list.append(tf.slice(feature_tensor_target, [0, 0, 0, 0], quarter_size))
-    list.append(tf.slice(feature_tensor_target, [0, round(fH / 2), 0, 0], quarter_size))
-    list.append(tf.slice(feature_tensor_target, [0, 0, round(fW / 2), 0], quarter_size))
-    list.append(tf.slice(feature_tensor_target, [0, round(fH / 2), round(fW / 2), 0], quarter_size))
-    feature_tensor_target = tf.concat(list, axis=0)
-    return feature_tensor_target
 
-def CX_loss_helper(vgg_A, vgg_B, CX_config, deform_on = False):
+def crop_quarters(feature_tensor):
+    N, fH, fW, fC = feature_tensor.shape.as_list()
+    quarters_list = []
+    quarter_size = [N, round(fH / 2), round(fW / 2), fC]
+    quarters_list.append(tf.slice(feature_tensor, [0, 0, 0, 0], quarter_size))
+    quarters_list.append(tf.slice(feature_tensor, [0, round(fH / 2), 0, 0], quarter_size))
+    quarters_list.append(tf.slice(feature_tensor, [0, 0, round(fW / 2), 0], quarter_size))
+    quarters_list.append(tf.slice(feature_tensor, [0, round(fH / 2), round(fW / 2), 0], quarter_size))
+    feature_tensor = tf.concat(quarters_list, axis=0)
+    return feature_tensor
+
+
+def CX_loss_helper(vgg_A, vgg_B, CX_config):
     if CX_config.crop_quarters is True:
         vgg_A = crop_quarters(vgg_A)
         vgg_B = crop_quarters(vgg_B)
@@ -55,7 +58,7 @@ def CX_loss_helper(vgg_A, vgg_B, CX_config, deform_on = False):
         print(' #### Skipping pooling for CX....')
     else:
         print(' #### pooling for CX %d**2 out of %dx%d' % (CX_config.max_sampling_1d_size, fH, fW))
-        vgg_A, vgg_B = random_pooling([vgg_A, vgg_B], output_1d_size=CX_config.max_sampling_1d_size, patch_size=CX_config.patch_size)
+        vgg_A, vgg_B = random_pooling([vgg_A, vgg_B], output_1d_size=CX_config.max_sampling_1d_size)
 
     CX_loss = CSFlow.CX_loss(vgg_A, vgg_B, distance=CX_config.Dist, nnsigma=CX_config.nn_stretch_sigma)
     return CX_loss
