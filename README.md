@@ -10,7 +10,7 @@ This is a Tensorflow implementation of the Contextual loss function as reported 
 Copyright 2018 Itamar Talmi and Roey Mechrez Licensed for noncommercial research use only.
 
 <div align='center'>
-  <img src='images/teaser.png' height="500px">
+  <img src='images/teaser_im.png' height="500px">
 </div>
 
 ## Setup
