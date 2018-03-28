@@ -2,9 +2,11 @@
 #   code credits: https://github.com/CQFIO/PhotographicImageSynthesis
 # ---------------------------------------------------
 from __future__ import division
+
 import time
+
 import utils.helper as helper
-from CX_helper import *
+from CX.CX_helper import *
 from model import *
 from utils.FetchManager import *
 
