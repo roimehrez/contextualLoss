@@ -1,8 +1,10 @@
+# ---------------------------------------------------
+#   code credits: https://github.com/CQFIO/PhotographicImageSynthesis
+# ---------------------------------------------------
 import numpy as np
 import scipy
 from config import *
 import tensorflow as tf
-
 
 def read_image(file_name, resize=True, fliplr=False):
     image = np.float32(scipy.misc.imread(file_name))

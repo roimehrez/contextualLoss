@@ -28,7 +28,7 @@ with tf.variable_scope(tf.get_variable_scope()):
     vgg_input = build_vgg19(input_image_A, reuse=True)
 
 
-    ## --- contextual style---
+    ## --- contextual style/target---
     if config.W.CX > 0:
         CX_loss_list = [w * CX_loss_helper(vgg_real[layer], vgg_fake[layer], config.CX)
                         for layer, w in config.CX.feat_layers.items()]
@@ -37,7 +37,7 @@ with tf.variable_scope(tf.get_variable_scope()):
     else:
         CX_style_loss = zero_tensor
 
-    ## --- contextual content---
+    ## --- contextual content/source---
     if config.W.CX_content > 0:
         CX_loss_content_list = [w * CX_loss_helper(vgg_input[layer], vgg_fake[layer], config.CX)
                                 for layer, w in config.CX.feat_content_layers.items()]
