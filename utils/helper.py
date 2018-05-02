@@ -6,12 +6,14 @@ import scipy
 from config import *
 import tensorflow as tf
 
+
 def read_image(file_name, resize=True, fliplr=False):
-    image = np.float32(scipy.misc.imread(file_name))
+    image = scipy.misc.imread(file_name)
     if resize:
         image = scipy.misc.imresize(image, size=config.TRAIN.resize, interp='bilinear', mode=None)
     if fliplr:
         image = np.fliplr(image)
+    image = np.float32(image)
     return np.expand_dims(image, axis=0)
 
 
