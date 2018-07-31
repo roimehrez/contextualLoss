@@ -1,6 +1,7 @@
 # The Contextual Loss [[project page]](http://cgm.technion.ac.il/Computer-Graphics-Multimedia/Software/Contextual/)
 
 This is a Tensorflow implementation of the Contextual loss function as reported in the following papers:
+(PyTorch implementation is also available - see bellow)
 
 ### The Contextual Loss for Image Transformation with Non-Aligned Data, [arXiv](https://arxiv.org/abs/1803.02077)
 ### Learning to Maintain Natural Image Statistics, [arXiv](https://arxiv.org/abs/1803.04626)
