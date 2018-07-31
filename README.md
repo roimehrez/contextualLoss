@@ -23,7 +23,7 @@ An example pre-trained model can be download from this [link](https://www.dropbo
 The data for this example can be download from this [link](https://www.dropbox.com/s/ggb6v6rv1a0212y/single.zip?dl=0)
 
 ### Requirement
-Required python libraries: Tensorflow (>=1.0) + Scipy + Numpy + easydict
+Required python libraries: Tensorflow (>=1.0, tested on 1.4) + Scipy + Numpy + easydict
 
 Tested in Windows + Intel i7 CPU + Nvidia Titan Xp (and 1080ti) with Cuda (>=8.0) and CuDNN (>=5.0). CPU mode should also work with minor changes.
 
@@ -38,6 +38,9 @@ Tested in Windows + Intel i7 CPU + Nvidia Titan Xp (and 1080ti) with Cuda (>=8.0
 1. Change ```config.TRAIN.to_train``` to ```True```
 2. Arrange the paths to the data, should have ```train``` and ```test``` folders
 2. run ``` single_image_animation.py ``` for 10 epochs. 
+
+### Pytorch implemntation
+We have also released a PyTorch implementation of the loss function. See ```CX/CX_distance.py```. Note that we havn't test this implemntation to reproduce the results in the paper. 
 
 
 ## License
