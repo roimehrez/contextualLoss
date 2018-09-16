@@ -24,7 +24,7 @@ An example pre-trained model can be download from this [link](https://www.dropbo
 The data for this example can be download from this [link](https://www.dropbox.com/s/ggb6v6rv1a0212y/single.zip?dl=0)
 
 ### Requirement
-Required python libraries: Tensorflow (>=1.0, tested on 1.4) + Scipy + Numpy + easydict
+Required python libraries: Tensorflow (>=1.0, <1.9,  tested on 1.4) + Scipy + Numpy + easydict
 
 Tested in Windows + Intel i7 CPU + Nvidia Titan Xp (and 1080ti) with Cuda (>=8.0) and CuDNN (>=5.0). CPU mode should also work with minor changes.
 
