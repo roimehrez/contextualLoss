@@ -1,4 +1,4 @@
-# The Contextual Loss [[project page]](http://cgm.technion.ac.il/Computer-Graphics-Multimedia/Software/Contextual/)
+# The Contextual Loss [[project page]](https://cgm.technion.ac.il/Computer-Graphics-Multimedia/Software/Contextual/)
 
 This is a Tensorflow implementation of the Contextual loss function as reported in the following papers:
 (PyTorch implementation is also available - see bellow)
@@ -6,7 +6,7 @@ This is a Tensorflow implementation of the Contextual loss function as reported 
 ### The Contextual Loss for Image Transformation with Non-Aligned Data, [arXiv](https://arxiv.org/abs/1803.02077)
 ### Learning to Maintain Natural Image Statistics, [arXiv](https://arxiv.org/abs/1803.04626)
 
-[Roey Mechrez*](http://cgm.technion.ac.il/people/Roey/), Itamar Talmi*, Firas Shama, [Lihi Zelnik-Manor](http://lihi.eew.technion.ac.il/). [The Technion](http://cgm.technion.ac.il/)
+[Roey Mechrez*](https://roimehrez.github.io/), Itamar Talmi*, Firas Shama, [Lihi Zelnik-Manor](http://lihi.eew.technion.ac.il/). [The Technion](http://cgm.technion.ac.il/)
 
 Copyright 2018 Itamar Talmi and Roey Mechrez Licensed for noncommercial research use only.
 
